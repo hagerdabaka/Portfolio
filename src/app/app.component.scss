@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+/*============  SIDEBAR ===========*/
+.sidebar {
+  padding: 2% 0%;
+  position: fixed;
+  width: 5rem;
+  height: 100vh;
+  background-color: var(--body-color);
+  border-right: 1px solid var(--box-color);
+  top: 0%;
+  font-size: var(--normal-font-size);
+}
+
+.nav__logo {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--skin-color);
+  text-align: center !important;
+  margin: auto;
+  font-family: "Pacifico", cursive;
+}
+
+.nav__logo-text {
+  font-size: 0.8rem !important;
+  color: var(--title-color);
+  font: var(--font-bold);
+  line-height: 40px;
+}
+
+.nav__menu {
+  position: fixed;
+  transform: rotate(-90deg) translateX(-100%);
+  transform-origin: left top;
+  width: 100vh;
+}
+
+.menu {
+  display: flex;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: -2px auto 0 auto;
+}
+
+.nav__link {
+  float: right;
+  height: 100%;
+  line-height: 80px;
+  padding: 0 0.5rem;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+  position: relative;
+  transition: 0.4s;
+}
+
+.btn__share {
+  position: absolute;
+  bottom: 1.8rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.social__share {
+  color: var(--title-color);
+  font-size: 1.3rem;
+}
+
+/* Active link */
+
+.nav__link:focus,
+.nav__link:hover {
+  color: var(--skin-color);
+}
+
+.nav__link:visited::after,
+.nav__link:active::after,
+.nav__link:focus::after,
+.nav__link:target:after,
+.nav__link.active::after {
+  position: absolute;
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: var(--skin-color);
+  border-radius: 50%;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+// nav-bottom
+.nav-bottom {
+  background-color: black;
+}
+
+.fa-solid {
+  font-size: 16px !important;
+}
+.nav--icons {
+  // position: absolute;
+  left: 1em;
+  right: 1em;
+  box-shadow: 0px 0px 31px -11px black;
+}
+.nav--icons ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+.nav--icons ul li a {
+  font-family: sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #000;
+  line-height: 1;
+  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  border-radius: 3em;
+  padding: 0.75em 1.25em;
+  transition: 0.6s ease-in-out;
+}
+.nav--icons ul li a span {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 0;
+  opacity: 0;
+  padding-left: 0.5em;
+  transform: translate3d(-0.5em, 0, 0);
+  transition:
+    opacity 0.6s,
+    max-width 0.6s,
+    transform 0.6s;
+  transition-timing-function: ease-in-out;
+}
+.nav--icons ul li a:hover,
+.nav--icons ul li a.is-active {
+  color: #868686 !important;
+}
+.nav--icons ul li a:hover span,
+.nav--icons ul li a.is-active span {
+  opacity: 1;
+  max-width: 40px;
+  transform: translate3d(0, 0, 0);
+}
+
+@media screen and (min-width: 601px) {
+  .nav-bottom {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav-top {
+    display: none;
+  }
+}
+
+/* MAIN STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.nav-bottom {
+  ul {
+    list-style: none;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & [type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+  }
+
+  & [type="checkbox"] + label {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1;
+    background: black !important;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+    box-shadow: 0px 0px 20px 3px rgba(185, 4, 58, 0.486);
+  }
+}
+
+.logo {
+  font-family: "Pacifico", cursive;
+}
+
+.cv-btn {
+  background-color: inherit !important;
+  color: inherit;
+  i {
+    color: var(--skin-color);
+  }
+}

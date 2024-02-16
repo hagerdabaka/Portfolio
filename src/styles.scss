@@ -1,0 +1,221 @@
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+:root {
+
+    /**** colors ****/
+    --hue-color: 242;
+
+    /* HSL Color Mode */
+
+    --skin-color: hsl(342, 92%, 46%);
+
+    --title-color: hsl(var(--hue-color), 8%, 95%);
+    --text-color: hsl(var(--hue-color), 8%, 85%);
+    --body-color: hsl(var(--hue-color), 19%, 5%);
+    --box-color: hsl(var(--hue-color), 14%, 10%);
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 38%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 26%);
+    --text2-color: rgb(143, 143, 143);
+
+
+    /* Font and Typography */
+    --body-font: 'Poppins', sans-serif;
+
+    /* .5rem = 8px, Irem = 16px, 1.5rem = 24px ... ***/
+    --biggest-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: .86rem;
+    --small-font-size: .8rem;
+    --smaller-font-size: .813rem;
+
+    /***  Font Weight *****/
+    --font-medium: 500;
+    --font-bold: 600;
+
+    /*----- Margenes bottom -----*/
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+
+    /**** z Index ********/
+    --z-fixed: 10;
+    --z-model: 100;
+
+}
+
+/* responsive Typography */
+@media screen and (max-width: 1024px) {
+    :root {
+
+        --biggest-font-size: 2rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.12 5rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+
+
+    }
+}
+
+/*============  BASE ===========*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color) !important;
+    color: var(--text-color) !important;
+    background: url('https://i.postimg.cc/yYJX0jgD/lines.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--title-color) !important;
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none !important;
+   
+}
+
+a {
+    text-decoration: none !important;
+    color: inherit !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+button,
+input {
+    border: none;
+    outline: none;
+}
+
+@media screen and (max-width:600px) {
+    .section__title{
+        margin-top: 4%;
+    }
+}
+
+.section__title{
+    padding-top: 2%;
+    margin-bottom: 4% !important;
+    padding: 1.3% 1.3% ;
+    position: relative;
+    /* display: inline-block; */
+    width: fit-content;
+    margin: 0 auto;
+
+}
+.section__title::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--skin-color);
+    animation: borderAnimation 2s linear forwards;
+  }
+  
+  @keyframes borderAnimation {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+/*============  LAYOUT ===========*/
+
+// .container {
+//     max-width: 1250px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+
+.grid {
+    display: grid;
+}
+
+
+/*============  BUTTONS ===========*/
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+    background-color: var(--skin-color);
+    color: var(--title-color);
+    padding: .75rem 1.4rem;
+    border-radius: .25rem;
+    border-top-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+    font-weight: var(--font-medium);
+    position: relative;
+    z-index: 1;
+}
+
+.button::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #343a40;
+    z-index: -1;
+    transform-origin: center;
+    transform: scale(0);
+    border-radius: .25rem;
+    transition: .3s;
+    border-top-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+
+.button:hover::after {
+    transform: scale(1);
+}
+
+.button::after {
+    font-size: 1.25rem;
+}
+
+a{
+    cursor: pointer;
+}

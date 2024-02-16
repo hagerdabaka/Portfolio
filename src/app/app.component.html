@@ -1,0 +1,90 @@
+    <!--   SIDEBAR  -->
+    <aside class="sidebar nav-top" id="sidebar">
+      <!-- Nav  Top-->
+      <nav class="nav">
+          <div class="nav__logo">
+              <a   routerLink="home" class="nav__logo-text">
+                  HD
+              </a>
+          </div>
+
+          <div class="nav__menu">
+              <div class="menu">
+                  <ul class="nav__list">
+                      <li class="nav__item">
+                          <a routerLink="home" class="nav__link  active "  (click)="onClickLink($event)" > Home</a>
+                      </li>
+                      <li class="nav__item">
+                          <a  routerLink="about" class="nav__link" (click)="onClickLink($event)" > About</a>
+                      </li>
+                      <li class="nav__item">
+                          <a routerLink="ed" class="nav__link" (click)="onClickLink($event)" > Eductation</a>
+                      </li>
+                      <li class="nav__item">
+                          <a   routerLink="/skills" class="nav__link" (click)="onClickLink($event)"> Skills</a>
+                      </li>
+                      <li class="nav__item">
+                        <a  class="nav__link"  routerLink="/portfolio" (click)="onClickLink($event)"> Portfolios</a>
+                    </li>
+
+                      <li class="nav__item">
+                          <a  routerLink="/contact" class="nav__link" (click)="onClickLink($event)">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+          <div class="btn__share ">
+            <button class="cv-btn"  (click)="openPDF()"><i class="fa-solid fa-download animate__animated animate__pulse animate__infinite" style="font-size: 20px !important"></i> CV</button>
+          </div>
+      </nav>
+  </aside>
+
+<router-outlet></router-outlet>
+
+<!-- Nav Bottom -->
+
+      <nav class="nav nav--icons nav-bottom  fixed-bottom">
+        <ul>
+          <li>
+            <a  routerLink="/home">
+                <i class="fa-solid fa-house-chimney "></i>
+            </a>
+          </li>
+          <li>
+            <a  routerLink="/ed">
+                <i class="fa-solid fa-graduation-cap "></i>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/about">
+                <i class="fa-solid fa-user "></i>
+            </a>
+          </li>
+
+        <!-- UL Menue-->
+
+          <li>
+            <input id="menu" type="checkbox">
+            <label for="menu" class="logo">
+              <button class="cv-btn"  (click)="openPDF()"><i class="fa-solid fa-download animate__animated animate__pulse animate__infinite"></i> <br> <span style="font-size: 12px ">CV</span></button>
+
+            </label>
+          <li>
+            <a  routerLink="/portfolio">
+                <i class="fa-solid fa-camera-retro "></i>
+            </a>
+          </li>
+          <li>
+            <a  routerLink="/skills">
+                <i class="fa-solid fa-bezier-curve "></i>
+            </a>
+          </li>
+          <li>
+            <a routerLink="/contact">
+                <i class="fa-solid fa-envelope "></i>      
+            </a>
+          </li>
+        </ul>
+      </nav>
+ 
+
